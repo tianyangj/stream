@@ -41,26 +41,21 @@
             </md-grid-tile-footer>
           </md-grid-tile>
         </md-grid-list>-->
-        <div layout="row">
+        <div layout="rows">
           <md-card ng-repeat="product in app.products" style="position:relative;">
             <md-button class="md-icon-button md-accent" aria-label="Play" style="position:absolute;right:0;">
               <md-icon md-svg-icon="hangouts" ng-click=""></md-icon>
             </md-button>
             <img ng-src="{{product.image}}" class="md-card-image">
             <md-card-content>{{product.title}}</md-card-content>
-            <!--<div class="md-actions" layout="row" layout-align="end center">
-              <md-button class="md-icon-button md-accent" aria-label="Play">
-                <md-icon md-svg-icon="hangouts" ng-click=""></md-icon>
-              </md-button>
-            </div>-->
           </md-card>
         </div>
-        <div layout="row">
-          <md-card ng-repeat="product in app.products">
+        <div style="white-space:nowrap;overflow-x:scroll;overflow-y:hidden;">
+          <md-card ng-repeat="product in app.products" style="position:relative;display:inline-block;width:200px;">
+            <md-button class="md-icon-button md-accent" aria-label="Play" style="position:absolute;right:0;">
+              <md-icon md-svg-icon="hangouts" ng-click=""></md-icon>
+            </md-button>
             <img ng-src="{{product.image}}" class="md-card-image">
-            <md-card-content>
-              <p>{{product.title}}</p>
-            </md-card-content>
           </md-card>
         </div>
       </md-content>
