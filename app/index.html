@@ -12,32 +12,23 @@
     <link rel="stylesheet" href="assets/app.css" />
   </head>
   
-  <body layout="column" ng-controller="AppController">
-    <md-toolbar layout="row" class="md-whiteframe-z2" style="position:fixed;">
-      <md-button class="menu" aria-label="Menu">
-        <md-icon md-svg-icon="menu"></md-icon>
-      </md-button>
-      <h1>GameFly - Stream App</h1>
-    </md-toolbar>
-    <div flex style="padding-top:70px;">
+  <body layout="column" layout-align="center center" ng-controller="AppController">
+    <div class="app-container">
       <gf-splash-video items="products1" active-index="activeIndex"></gf-splash-video>
-      <md-content style="position:fixed;bottom:0;width:100%;height:300px;background-color:transparent;">
-        <h2 style="color:#fff;margin:10px;">My Games</h2>
-        <div style="white-space:nowrap;overflow-x:scroll;overflow-y:hidden;">
-          <div class="my-game" ng-repeat="product in products1" style="position:relative;display:inline-block;width:300px;margin:10px;">
-            <md-button class="md-fab md-accent" aria-label="Play" ng-click="play($index)" style="position:absolute;right:0;bottom:0;">
-              <md-icon md-svg-icon="play"></md-icon>
-            </md-button>
-            <img ng-src="{{product.image}}" style="width:100%;">
-          </div>
+      <md-content class="game-content">
+        <h2 class="font-shadow">My Games</h2>
+        <div class="game-stack">
+          <div class="my-game game-item" ng-repeat="product in products1" ng-style="{'background-image':'url({{product.image}})'}"
+          ng-click="play($index)"></div>
         </div>
-        <h2 style="color:#fff;margin:10px;">Adventure Pack - 7 Games</h2>
-        <div style="white-space:nowrap;overflow-x:scroll;overflow-y:hidden;">
-          <div ng-repeat="product in products2" style="display:inline-block;width:300px;margin:10px;">
-            <img ng-src="{{product.image}}" style="width:100%;">
-          </div>
+        <h2 class="font-shadow">Adventure Pack - 7 Games</h2>
+        <div class="game-stack">
+          <div class="game-item" ng-repeat="product in products2" ng-style="{'background-image':'url({{product.image}})'}"></div>
         </div>
       </md-content>
+    </div>
+    <div class="md-padding">
+      For best viewability, use 1280x720 resolution on any smart device emulator.
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>

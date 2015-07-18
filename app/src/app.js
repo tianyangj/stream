@@ -32,6 +32,10 @@ angular
 				image: '/assets/image/s1.png',
 				title: 'Witcher: Wild Hunt',
 				video: 'https://cdn1.gameflycdn.com/merch/Video/480p/product-5006815-2.mp4'
+			}, {
+				image: '/assets/image/s3.png',
+				title: 'Batman: Arkham Knight',
+				video: 'https://cdn1.gameflycdn.com/merch/Video/480p/product-5007751-4.mp4'
 			}];
 
 		$scope.products2 = [{
@@ -64,7 +68,8 @@ angular
 
 		return {
 			restrict: 'E',
-			template: '<h1 style="position:absolute;left:0;right:0;background-color:rgba(0,0,0,0.5);color:#fff;padding:30px;margin:0;">{{activeVideo.title}}</h1><video muted ng-src="{{activeVideo.video}}" style="width:100%;"></video>',
+			template: '<h1 class="game-title font-shadow">{{activeVideo.title}}</h1>' +
+			'<video class="game-video" muted ng-src="{{activeVideo.video}}"></video>',
 			scope: {
 				items: '=',
 				activeIndex: '='
@@ -76,8 +81,8 @@ angular
 						// set active video item style
 						var $items = angular.element('.my-game');
 						var $activeItem = angular.element($items[newIndex]);
-						$items.css('opacity', '0.5');
-						$activeItem.css('opacity', '1');
+						$items.css('border-color', 'transparent');
+						$activeItem.css('border-color', '#DD743B');
 						// play video
 						scope.activeVideo = scope.items[newIndex];
 						$timeout(function () {

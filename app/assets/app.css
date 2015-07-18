@@ -4,7 +4,7 @@ html, body {
   height:100%;
   margin: 0px;
   padding: 0px;
-  background-color: #000;
+  background-color: #bdbdbd;
 }
 
 /* Toolbar area */
@@ -129,3 +129,67 @@ span.name {
   font-size:1.1em;
   padding-left:5px;
 }
+
+
+
+
+.app-container {
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  position: relative;
+}
+
+.game-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  margin: 0;
+  font-size: 36px;
+  z-index: 1;
+}
+
+.font-shadow {
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.game-video {
+  width: 100%;
+  height: 720px;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+h2 {
+  margin: 10px;
+  font-size: 26px;
+}
+
+.game-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 320px;
+  background-color: transparent;
+}
+
+.game-stack {
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.game-item {
+  display: inline-block;
+  width: 300px;
+  height: 150px;
+  margin: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border: 5px solid transparent;
+}
+
